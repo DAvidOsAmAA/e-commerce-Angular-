@@ -35,7 +35,10 @@ a:hover {
   color: black;
   text-decoration: none;
 }
+.product{
+  position: relative;
 
+}
 .product:hover {
   border-radius: 5px;
   border: solid 1px var(--main-color);
@@ -62,7 +65,8 @@ a:hover {
   background-color: var(--light-color) !important;
 }
 .btn-main {
-  position: relative;
+  position: relative; 
+  bottom: -10px;
   transform: translateY(20px); 
   transition: transform 0.5s ease; 
   background-color: var(--main-color);
@@ -72,6 +76,8 @@ a:hover {
   color: #fff;
   cursor: pointer;
   margin-bottom: -10;
+  right: 2px;
+  opacity: 0;
 }
 .btn-main:disabled {
   cursor: not-allowed;
@@ -81,7 +87,7 @@ a:hover {
   background-color: #ccc;
 }
 .btn-main:hover {
-
+opacity: 1;
   transform: translateY(0); 
   background-color: #11bd11;
 }
