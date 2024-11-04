@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import {
   provideRouter,
   withHashLocation,
@@ -8,6 +8,7 @@ import {
 
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,5 +20,6 @@ export const appConfig: ApplicationConfig = {
       withInMemoryScrolling({ scrollPositionRestoration: 'top' })
     ),
     provideHttpClient(),
+    importProvidersFrom(BrowserAnimationsModule)
   ],
 };

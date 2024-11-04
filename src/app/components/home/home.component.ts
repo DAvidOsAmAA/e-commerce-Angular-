@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../core/service/products.service';
+import { AuthService } from '../../core/service/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +11,8 @@ import { ProductsService } from '../../core/service/products.service';
 })
 export class HomeComponent implements OnInit {
   allproduct :any;
-  constructor(private _ProductsService: ProductsService) {
-    
+  constructor(private _ProductsService: ProductsService,private token:AuthService) {
+    this.token.saveUserDate()
   }
   getProducts = () => {
     this._ProductsService.getProducts().subscribe({

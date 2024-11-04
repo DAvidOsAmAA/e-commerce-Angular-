@@ -11,15 +11,19 @@ import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { authGuard } from './core/guards/auth.guard';
+import { isLoggedInGuard } from './core/guards/is-logged-in.guard';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 
 export const routes: Routes = [
-    {path:"",component:AuthLayoutComponent,children:[
+    {path:"",component:AuthLayoutComponent,canActivate:[isLoggedInGuard],children:[
         {path:"",redirectTo:'signin',pathMatch:'full'},
         {path:"signup",component:SignupComponent,title:"signup"},
-        {path:"signin",component:SigninComponent,title:"signin"}
+        {path:"signin",component:SigninComponent,title:"signin"},
+        {path:"forgot-password",component:ForgetPasswordComponent,title:"forgot"}
 
     ]},
-    {path:"",component:MainLayoutComponent,children:[
+    {path:"",component:MainLayoutComponent,canActivate:[authGuard],children:[
         {path:"",redirectTo:'home',pathMatch:'full'},
         {path:"home",component:HomeComponent,title:"Home"},
         {path:"categories",component:CategoryComponent,title:"Categories"},
