@@ -1,0 +1,17 @@
+<div class="container main">
+  <div class="row mt-4">
+    <div class="col-md-3">
+        <img [src]="product.imageCover" class="w-100" alt="">
+    </div>
+    <div class="col-md-9">
+        <h1 class="mt-5 pt-2">{{product.title}}</h1>
+        <p class="mt-3">{{product.description}}</p>
+        <span>{{product.category.name}}</span>
+        <div class="d-flex justify-content-between">
+            <span>{{product.price}}EGP</span>
+            <span><i class="fa-solid fa-star" style="color: #FFD43B;"></i>{{product.ratingsAverage}}</span>
+        </div>
+        <button class="btn w-100 text-white bg-main mt-5">Add To Cart</button>
+    </div>
+</div>
+</div>

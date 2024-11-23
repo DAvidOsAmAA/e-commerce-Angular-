@@ -1,1 +1,42 @@
-<p>cart works!</p>
+  @if(cart.numOfCartItems!=0){
+<div class="container my-5 p-4 rounded-2 bg-main-light">
+  <h1>show cart</h1>
+  <h2>
+    Items:<span class="text-main ms-2">{{ cart.numOfCartItems }}</span>
+  </h2>
+  <p class="text-main">Total Cart Price :{{ cart.data?.totalCartPrice }}</p>
+
+  <div class="row my-2 borddr-bottom py-2">
+    @for (product of cart.data.products; track $index) {
+    <div class="col-md-1 mb-4">
+      <img [src]="product.product.imageCover" class="w-100" alt="" />
+    </div>
+    <div class="col-md-11 d-flex justify-content-between">
+      <div>
+        <h4>{{ product.product.title }}</h4>
+        <p class="text-main">Price:{{ product?.price }}</p>
+        <button (click)="deleteItem(product.product._id)" class="btn ps-0">
+          <i class="fa-solid fa-trash text-main me-2"></i>Remove
+        </button>
+      </div>
+      <div>
+        <button (click)="updateQuantity(product.product._id,product.count+1)" class="btn main-border">+</button>
+        <span class="mx-2">{{product.count}}</span>
+        <button [disabled]="product.count==1" (click)="updateQuantity(product.product._id,product.count-1)" class="btn main-border">-</button>
+      </div>
+    </div>
+
+    }
+    <div class="d-flex justify-content-center align-items-center">
+      <button [routerLink]="['/address',cart.cartId]" class="btn bg-main w-25 text-white py-3 rounded-5">
+        Place Order
+      </button>
+    </div>
+  </div>
+</div>
+}@else {
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <h2 class="text-main my-5text-center">Cart Is Empty</h2>
+</div>
+} 
+

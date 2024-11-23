@@ -1,0 +1,13 @@
+.custom-slider-height {
+    height: 15vh; 
+}
+.custom-slider-height img {
+    height: 300px;  
+    width: 100%;   
+    object-fit:cover; 
+}
+.carouselSlide {
+    height: 300px;
+    display: flex;
+    align-items: center; 
+}

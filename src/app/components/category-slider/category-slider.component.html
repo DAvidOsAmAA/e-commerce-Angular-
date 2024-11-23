@@ -1,0 +1,12 @@
+<h2 class="mb-5">Shop new Categories</h2>
+<owl-carousel-o [options]="customOptions">
+@for(category of categories; track $index){
+    <ng-container >
+        <ng-template carouselSlide [id]="category._id">
+          <img height="200px"  [src]="category.image" [alt]="category.name" [title]="category.name">
+        </ng-template>
+      </ng-container>
+}
+
+
+  </owl-carousel-o>

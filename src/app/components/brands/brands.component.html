@@ -1,0 +1,12 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="row justify-content-center">
+        @for (brand of allBrand; track $index) {
+            <div class="col-auto">
+                <div class="brandCard text-center">
+                    <img [src]="brand.image" alt="" class="img-fluid">
+                    <p class="mt-2 text-bolder">{{ brand.name }}</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

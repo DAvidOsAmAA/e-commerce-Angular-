@@ -1,0 +1,12 @@
+{
+  "navbar": {
+    "Home": "Home",
+    "Categories":"Categories",
+    "Brands":"Brands",
+    "Products":"Products",
+    "Wishlist":"Wishlist",
+    "Logout":"Logout",
+    "Cart":"Cart",
+    "Lang":"عربي"
+  }
+}

@@ -14,6 +14,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { authGuard } from './core/guards/auth.guard';
 import { isLoggedInGuard } from './core/guards/is-logged-in.guard';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { DetailsComponent } from './components/details/details.component';
+import { AdreessComponent } from './components/adreess/adreess.component';
 
 export const routes: Routes = [
     {path:"",component:AuthLayoutComponent,canActivate:[isLoggedInGuard],children:[
@@ -32,6 +34,9 @@ export const routes: Routes = [
         {path:"cart",component:CartComponent,title:"Cart"},
         {path:"wishlist",component:WishlistComponent,title:"Wishlist"},
         {path:"order",component:OrdersComponent,title:"Order"},
+        {path:"details/:id",component:DetailsComponent,title:"Details"},
+        {path:"address/:id",component:AdreessComponent,title:"address"},
+
     ]},
 
     {path:"**",component:NotfoundComponent},
